@@ -6,6 +6,30 @@ filtering off-brief submissions, judging makeup-ad compliance across national ru
 an automated description, and producing **explainable, timestamped evidence** behind an
 `APPROVE` / `REVIEW` / `BLOCK` decision.
 
+## Walkthrough
+
+| | |
+|---|---|
+| **Sign in** — mock auth, any credentials work. | **Pick a brand** — each brand owns its own TwelveLabs index. |
+| ![Sign-in screen](references/screenshots/01-login.png) | ![Brand selection](references/screenshots/02-brand-selection.png) |
+| **Pick a campaign** — the brief defines what "on-brief" means. | **Campaign workspace** — upload, pick jurisdictions, and triage submissions into *ready for decision* vs *rejected* with per-market verdicts. |
+| ![Campaign selection](references/screenshots/03-campaign-selection.png) | ![Campaign workspace](references/screenshots/04-videos-in-workflow.png) |
+
+**A clean creative** — 98% on-brief, **KR Approve / US Review**, with an auto-generated description and timestamped focal/other ranges. No violations clears the policy gate.
+
+![Clean video report](references/screenshots/05-video-review-result-01.png)
+
+**A blocked creative** — 93% on-brief but **KR / US Block**: six high-severity functional-misrepresentation findings, each citing the exact Korean statute and offering a compliant rewrite.
+
+![Blocked video report](references/screenshots/06-video-review-result-02.png)
+
+| | |
+|---|---|
+| **Grounded evidence** — every finding carries a rule id, severity, category, the verbatim matched text, the national statute, a suggested fix, and a clickable timecode. | **Click a timecode** — replays just that moment on loop, so a reviewer can verify the on-screen claim (`#1 coverage in the world`) by eye. |
+| ![Timestamped evidence](references/screenshots/07-timestamp-evidence.png) | ![Replay a moment on loop](references/screenshots/08-video-to-timestamped-section.png) |
+| **Request Revision** — an editable email to the creator, drafted from the findings with exact timecodes and concrete fixes. | **Compliance reports** — every review, with per-jurisdiction decisions and timestamped evidence. |
+| ![Auto-drafted revision request](references/screenshots/09-auto-generated-revision-request-email-template.png) | ![Compliance report list](references/screenshots/10-ongoing-compliance-report-list.png) |
+
 ## The pipeline (three layers + a deterministic gate)
 
 ```
