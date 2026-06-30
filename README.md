@@ -132,11 +132,14 @@ Marengo 3.0 + Pegasus 1.5) · Anthropic (`@anthropic-ai/sdk`, Sonnet) · better-
 
 ### How this scales in a real ads system
 The in-process job runner stands in for a real queue. In production: replace it with a durable
-queue (SQS/Temporal), keep the per-brand index (campaign_id in user-metadata enables
-cross-campaign search), fan out perception + per-market judgment as workers,
-cache the single observation pass across markets, and persist verdicts to a warehouse. The
-layer boundaries (perception → judgment → deterministic gate) and the OKF rule format stay the
-same — only the runtime substrate changes.
+queue (e.g. SQS), and run Pegasus calls through **workers that respect TwelveLabs' rate
+limits** (pacing requests and backing off on 429s) — since a single-process concurrency cap
+doesn't hold once you scale to multiple instances. Keep the per-brand index (campaign_id in
+user-metadata enables cross-campaign search), fan out perception + per-market judgment as workers,
+and cache the single observation pass per video across markets so an added market re-judges
+without re-running Pegasus, and persist verdicts to a warehouse. The layer boundaries (perception →
+judgment → deterministic gate) and the OKF rule format stay the same — only the runtime substrate
+changes.
 
 ## Layout
 ```
