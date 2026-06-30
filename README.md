@@ -110,7 +110,7 @@ review (pick the jurisdictions — none are pre-selected) → open the report an
 replay just that moment on loop. Every list thumbnail is also a play button (incl. rejected videos),
 and per-video **Re-run** opens its own jurisdiction picker and re-judges without re-running Pegasus.
 
-### Sample video Exmaples (not included in the public repo. Illustrating the smapling methodology)
+### Sample video Examples (not included in the public repo. Illustrating the sampling methodology)
 - `clean-bofc-150s.mp4` — on-brief, expected **APPROVE** (0 violations).
 - `relevance-bofc-130-510.mp4` — relevance-band probe (partial product presence).
 - `TC-M3-triple.mp4` — expected **REVIEW** (≈3 violations).
