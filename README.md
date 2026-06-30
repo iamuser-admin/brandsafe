@@ -128,7 +128,7 @@ Marengo 3.0 + Pegasus 1.5) · Anthropic (`@anthropic-ai/sdk`, Sonnet) · better-
 - All heavy work is **non-blocking**: uploads kick off background jobs (`src/lib/jobs.ts`,
   `src/lib/pipeline.ts`); the UI polls for status. The index enables **Marengo 3.0 only** (clip
   embeddings for the pre-filter); **Pegasus 1.5** runs via analyze-by-`asset_id`, independent of the
-  index — overridable via `TWELVELABS_MARENGO_MODEL` / `TWELVELABS_PEGASUS_MODEL`.
+  index.
 
 ### How this scales in a real ads system
 The in-process job runner stands in for a real queue. In production: replace it with a durable
